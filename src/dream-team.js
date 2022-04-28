@@ -20,7 +20,7 @@ function createDreamTeam(members) {
   
   return inTeam.length > 0 ? inTeam
                             .map(el => el.split('').find(letter => letter !== ' ').toUpperCase())
-                            .sort((a, b) => a > b ? 1 : -1)
+                            .sort()
                             .join('')
                           : false;  
 }
