@@ -12,21 +12,18 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function deleteDigit(n) {
+  let digits = n.toString().split('');
+  let num = digits.find((el, i, arr) => +arr[i] < +arr[i + 1]);
 
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+  if (!!num) {
+    let ind = digits.indexOf(num);
+    digits.splice(ind, 1);
 
-  // let a = n;
-  // let digits = 0;
+  } else {
+    digits.pop();
+  }
 
-  // while (a >= 1) {
-  //   digits++;
-  //   a = Math.floor(a / 10);
-  // }
-
-
-
-  
+  return parseInt(digits.join(''));
 }
 
 module.exports = {
